@@ -1,0 +1,44 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:3.2
+    container_name: mongo
+    ports:
+      - 27017:27017
+      - 28017:28017
+    env_file:
+      - ./.env
+    networks:
+      - local
+    restart: always
+
+  lrs:
+    image: sproutlabs/learninglocker
+    container_name: lrs
+    ports:
+      - "80:80"
+    env_file:
+      - ./.env
+    networks:
+      - local
+    restart: always
+    depends_on:
+      - mongo
+
+  server:
+    build: ./
+    container_name: server
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - ./.env
+    networks:
+      - local
+    restart: unless-stopped
+    depends_on:
+      - mongo
+      - lrs
+
+networks:
+  local:
+    driver: "bridge"
