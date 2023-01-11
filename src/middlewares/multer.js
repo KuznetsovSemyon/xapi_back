@@ -64,7 +64,9 @@ const courseFilter = (req, file, cb) => {
         return cb(new Error(err.message));
     }
 
-    if (file.mimetype == 'application/zip') {
+    if (file.mimetype == 'application/zip' ||
+        file.mimetype == 'application/x-zip-compressed' ||
+        file.mimetype == 'application/x-zip') {
         cb(null, true);
     }
     else {
