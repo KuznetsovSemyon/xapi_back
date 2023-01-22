@@ -80,7 +80,7 @@ const courseUpload = multer({
     fileFilter: courseFilter
 });
 
-const fileUpload = multer({
+const pageUpload = multer({
     storage: fileStorage,
     fileFilter: fileFilter
 });
@@ -96,8 +96,8 @@ const uploadCourse = (req, res, next) => {
     })
 }
 
-const uploadFile = (req, res) => {
-    const upload = fileUpload.fields([{ name: 'file', maxCount: 1}, { name: 'courseName', maxCount: 1 }])
+const uploadPage = (req, res) => {
+    const upload = pageUpload.fields([{ name: 'file', maxCount: 1}, { name: 'courseName', maxCount: 1 }])
 
     upload(req, res, err => {
         if (err) {
@@ -107,4 +107,4 @@ const uploadFile = (req, res) => {
     })
 }
 
-export { uploadCourse, uploadFile }
+export { uploadCourse, uploadPage }
