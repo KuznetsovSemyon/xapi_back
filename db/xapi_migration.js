@@ -1,7 +1,10 @@
-import User from './models/User.js'
-import Role from './models/Role.js'
+//import User from './schemas/UserSchema.js'
+//import Role from './schemas/RoleSchema.js'
+//import RoleSchema from "./schemas/RoleSchema.js";
+//import UserSchema from "./schemas/UserSchema.js";
+import { User, Role } from './connection.js'
 
-const migration = async () => {
+const xapi_migration = async () => {
     try {
         const teacherRole = new Role({ value: "teacher" })
         const studentRole = new Role({ value: "student" })
@@ -29,4 +32,4 @@ const migration = async () => {
     }
 }
 
-export default migration
+export default xapi_migration

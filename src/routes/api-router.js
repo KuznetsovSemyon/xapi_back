@@ -2,6 +2,7 @@ import { Router } from 'express'
 import { uploadCourse, uploadPage } from "../middlewares/multer.js"
 import courseController from '../controllers/courseController.js'
 import userController from '../controllers/userController.js'
+import lrsControler from '../controllers/lrsController.js'
 import authCheck from '../middlewares/authCheck.js'
 import roleCheck from '../middlewares/roleCheck.js'
 
@@ -14,6 +15,7 @@ router.post('/upload_file', roleCheck, uploadPage)
 router.get('/courses/:cn/:fn', authCheck, courseController.showPage)
 router.get('/courses/:cn', authCheck, courseController.showCourse)
 router.get('/courses', authCheck, courseController.showAllCourses)
+router.get('/client-info/:name', lrsControler.getClientInfo)
 router.delete('/courses/delete/:cn/:fn', roleCheck, courseController.deletePage)
 router.delete('/courses/delete/:cn', roleCheck, courseController.deleteCourse)
 

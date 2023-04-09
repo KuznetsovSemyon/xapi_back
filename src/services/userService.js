@@ -1,4 +1,4 @@
-import User from '../../db/models/User.js'
+import { User } from '../../db/connection.js'
 import jwt from 'jsonwebtoken'
 
 const generateAccessToken = (id, role) => {
