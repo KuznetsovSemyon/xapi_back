@@ -1,8 +1,4 @@
-import axios from "axios"
-import FormData from "form-data"
-import ClientLrsSchema from "../../db/schemas/ClientLrsSchema.js";
-import mongoose from 'mongoose'
-import { ClientLrs, lrs_conn, database } from '../../db/connection.js'
+import {database} from '../../db/connection.js'
 
 class LrsService {
     async createUser(UserLrs) {
@@ -142,10 +138,8 @@ class LrsService {
     async getClientInfo(name) {
         try {
             //let user = await ClientLrs.findOne({ authority: { name, mbox: "mailto:hello@learninglocker.net" } })
-            const client = database.collection("client");
-
-            let user = await client.findOne({ authority: { name, mbox: "mailto:hello@learninglocker.net" } })
-            return user
+            const client = database.collection("client")
+            return await client.findOne({ 'authority.name': name })
         } catch (e) {
             console.log(e)
             return new Error(e)

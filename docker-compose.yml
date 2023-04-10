@@ -14,8 +14,9 @@ services:
       - local
     restart: always
 
-  mongosetup:
+  mongo_setup:
     image: mongo:3.2
+    container_name: mongo_setup
     depends_on:
       - mongo
       - lrs
@@ -39,9 +40,10 @@ services:
     depends_on:
       - mongo
 
-  server:
+  back:
     build: ./
-    container_name: server
+    image: xapi_back
+    container_name: back
     ports:
       - "127.0.0.1:4000:4000"
     env_file:

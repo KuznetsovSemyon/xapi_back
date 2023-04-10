@@ -1,4 +1,5 @@
 import userService from "../services/userService.js";
+import lrsService from "../services/lrsService.js";
 
 class UserController {
 
@@ -11,8 +12,11 @@ class UserController {
                 return res.status(400).json({ error: true, message: "password required" });
 
             let token = await userService.login(login, password);
+            if (token instanceof Error)
+                res.status(400).json({ error: true, message: token.message || token });;
 
-            res.status(200).json({ token });
+            const clientInfo = await lrsService.getClientInfo(login);
+            res.status(200).json({ token, clientInfo });
         }
         catch (e) {
             res.status(400).json({ error: true, message: e.message || e });
