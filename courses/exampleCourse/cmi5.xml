@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cour seStructure xmlns="https://w3id.org/xapi/profiles/cmi5/v1/CourseStructure.xsd">
+  <course id="http://courses.example.edu/identifiers/courses/d07e186b">
+    <title>
+      <langstring lang="en-US">Geology TEST 0.9.2 </langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">
+        Geology is an earth science comprising the study of solid earth, rhe rocks of which it is
+        composed, and the proccesses by which they change.
+      </langstring>
+    </description>
+  </course>
+  <objectives>
+    <objective id="http://objectives.example.com/identifiers/geology/basics">
+      <title>
+        <langstring lang="en-US">Geology - Basic knowledge YES </langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          Knowledge about basic terms, theories and applications of geology.
+        </langstring>
+      
+      </description>
+    </objective>
+    <objective
+        id="http://objectives.example.com/identifiers/geology/material-identification">
+      <title>
+        <langstring lang="en-US">Identification of common Earth materials.</langstring>
+        <langstring lang="de-DE">Identifikation von üblichen Erdmaterialien.</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          Knowledge about properties of minerals and methods to gather data about rocks.
+        </langstring>
+      </description>
+    </objective>
+    <objective
+        id="http://courses.example.edu/objectives/scientific-thinking-and-acting">
+      <title>
+        <langstring lang="en-US">Scientific Thinking and Acting</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">
+          Application of scientific methods to collect, prove and validate knowledge.
+        </langstring>
+    
+      </description>
+    </objective>
+    <objective id="http://objectives.example.com/identifiers/history/history-of-science">
+      <title>
+        <langstring lang="en-US">History of Science</langstring>
+      </title>
+      <description>
+        <langstring lang="en-US">Knowledge about the origins and development of science</langstring>
+      
+      </description>
+    </objective>
+  </objectives>
+  
+  
+  <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ec9"
+      activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+      moveOn="Completed">
+    <title>
+      <langstring lang="en-US">AU 1</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">AU 1 description</langstring>
+    </description>
+    <objectives>
+      <objective
+          idref="http://objectives.example.com/identifiers/geology/basics"/>
+      <objective
+          idref="http://courses.example.edu/objectives/scientific-thinking-and-acting"/>
+    </objectives>
+    <url>
+      test.html
+    </url>
+    <launchParameters>
+      {"param1": "Lorem ipsum dolor sit amet", "param2": [1,2,3,4,5],"param3": {"a": 1,"b": 2}}
+    </launchParameters>
+    <entitlementKey>
+      xyz-123-9999
+    </entitlementKey>
+  </au>
+
+
+  <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7eca/"
+      activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+      moveOn="Completed">
+    <title>
+      <langstring lang="en-US">AU 2</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">AU 2 description</langstring>
+    </description>
+    <url>
+      test2.html
+    </url>
+    <launchParameters>
+      {"param1": "Lorem ipsum dolor sit amet", "param2": [1,2,3,4,5],"param3": {"a": 1,"b": 2}}
+    </launchParameters>
+    <entitlementKey>
+      xyz-123-9999
+    </entitlementKey>
+  </au>
+
+
+  <au id="http://courses.example.edu/identifiers/courses/d07e186b/blocks/003-001/aus/7ecd/"
+      activityType="http://adlnet.gov/expapi/activities/lesson" launchMethod="AnyWindow"
+      masteryScore="0.7"
+      moveOn="Completed">
+    <title>
+      <langstring lang="en-US">AU 4</langstring>
+    </title>
+    <description>
+      <langstring lang="en-US">AU 4 description</langstring>
+    </description>
+    <url >
+      index.html
+    </url>
+    <launchParameters>
+      {"param1": "Lorem ipsum dolor sit amet", "param2": [1,2,3,4,5],"param3": {"a": 1,"b": 2}}
+    </launchParameters>
+    <entitlementKey>
+      xyz-123-9999
+    </entitlementKey>
+  </au>
+
+
+</courseStructure>

@@ -57,17 +57,17 @@ services:
       - mongo
       - lrs
 
-#  front:
-#    image: vendrik/xapi_front
-#    container_name: front
-#    ports:
-#      - "127.0.0.1:3000:3000"
-#    networks:
-#      - local
-#    restart: unless-stopped
-#    depends_on:
-#      - mongo
-#      - lrs
+  front:
+    image: vendrik/xapi_front
+    container_name: front
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks:
+      - local
+    restart: unless-stopped
+    depends_on:
+      - mongo
+      - lrs
 
 volumes:
   shared-volume:
